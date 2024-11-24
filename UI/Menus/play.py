@@ -195,7 +195,7 @@ class MainGame:
     def __init__(self, game):
         self.game = game
 
-        self.games_fps = 120
+        self.games_fps = FPS
 
         self.current_song_level = 0
 
@@ -425,7 +425,7 @@ class MainGame:
         self.slow_motion_counter = 0
         self.slow_motion_activation_index = 0
         self.slow_motion_activation_counter = 0
-        self.games_fps = 120
+        self.games_fps = FPS
 
     def populate_spawn_fruits_event_triggers(self, timestamps, delay=0):
         self.spawn_fruits_event_triggers = {}

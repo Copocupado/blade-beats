@@ -58,9 +58,6 @@ class AssetLoader:
         self.load_rankings()
 
     def load_videos(self):
-        video = cv2.VideoCapture('Songs/Ghost Town/background.mp4')
-        self.assets["Ghost Town"] = video
-
         video = cv2.VideoCapture('Songs/I Want It That Way/background.mp4')
         self.assets["I Want It That Way"] = video
 

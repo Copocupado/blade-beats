@@ -42,7 +42,8 @@ class CheckpointStar(pygame.sprite.Sprite):
                 ((window_config.WIDTH / 2) + PerfectOverlay.width / 2) + self.distance_to_travel,
                 window_config.HEIGHT - 100))
 
-    def update(self, current_level, *args, **kwargs):
+    def update(self, current_fps, *args, **kwargs):
+        self.speed = self.distance_to_travel / current_fps
         self.rect.x -= self.speed * self.movement_direction
 
     def stop(self):

@@ -74,7 +74,7 @@ def song():
     dict.update(singer_part_3(get_last_timestamp(dict) + half_beat))
     dict.update(background_singer(get_last_timestamp(dict) + one_beat))
 
-    dict.update(singer_part_1(get_last_timestamp(dict) + one_beat + half_beat))
+    dict.update(singer_part_1(get_last_timestamp(dict) + one_beat + quarter_beat))
     dict.update(singer_part_3(get_last_timestamp(dict) + half_beat))
     dict.update(background_singer(get_last_timestamp(dict) + one_beat))
 
@@ -95,7 +95,7 @@ def song():
     dict.update(numb_complement(get_last_timestamp(dict) + one_beat))
     dict.update(numb_complement(get_last_timestamp(dict) + one_beat))
 
-    dict.update(singer_part_1(get_last_timestamp(dict) + one_beat))
+    dict.update(singer_part_1(get_last_timestamp(dict) + half_beat))
     dict.update(singer_part_2(get_last_timestamp(dict) + one_beat + one_beat + half_beat))
     dict[get_last_timestamp(dict) + one_beat] = {
         'is_long': False,
@@ -148,11 +148,11 @@ def song():
     dict.update(singer_part_3(get_last_timestamp(dict) + one_beat * 2, 2))
     dict.update(background_singer(get_last_timestamp(dict) + one_beat + half_beat + quarter_beat))
 
-    dict.update(singer_part_1(get_last_timestamp(dict) + one_beat + half_beat))
+    dict.update(singer_part_1(get_last_timestamp(dict) + one_beat + quarter_beat))
     dict.update(singer_part_3(get_last_timestamp(dict) + half_beat))
     dict.update(background_singer(get_last_timestamp(dict) + one_beat))
 
-    dict[get_last_timestamp(dict) + one_beat] = {
+    dict[get_last_timestamp(dict) + half_beat + quarter_beat] = {
         'is_long': False,
         'health': 1,
         'double': False,
@@ -336,7 +336,7 @@ def song():
         'side_to_spawn': Fruit.sides_to_spawn[randint(0, 1)]
     }
 
-    dict[get_last_timestamp(dict) + one_beat * 3 + half_beat + quarter_beat] = {
+    dict[get_last_timestamp(dict) + one_beat * 3 + half_beat] = {
         'is_long': False,
         'health': 1,
         'double': False,
@@ -828,7 +828,7 @@ def background_singer(timestamp, variation=1):
         'double': False,
         'side_to_spawn': side_to_spawn()
     }
-    dict[get_last_timestamp(dict) + half_beat] = {
+    dict[get_last_timestamp(dict) + half_beat + quarter_beat] = {
         'is_long': False,
         'health': 1,
         'double': False,

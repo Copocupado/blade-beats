@@ -227,8 +227,8 @@ class Player(pygame.sprite.Sprite):
     def update(self, current_fps, *args, **kwargs):
         Camera.camera_offset = [0, 0]
 
-        self.cooldown_left = round(current_fps * 0.1)
-        self.cooldown_right = round(current_fps * 0.1)
+        self.cooldown_left = round(current_fps * 0.12)
+        self.cooldown_right = round(current_fps * 0.12)
 
         if self.last_executed_animation != 'Death':
             if self.is_executing_animation == 'Attack 1':
@@ -352,7 +352,7 @@ class Player(pygame.sprite.Sprite):
             self.missed_counter = 0
             self.misses += 1
             TextFeedback(self.all_sprites, position=self.rect.midtop, text='Errou', color=RED)
-            self.health -= 1
+            self.health -= 0
             if self.health < 1:
                 sound = self.asset_loader.assets["sounds"]["player_hit"][randint(0, 6)]
                 sound.play()

@@ -26,27 +26,20 @@ class Main:
         self.song_cards = [
             SongCard(
                 position=(50, 150),
-                song_name="Ghost Town",
-                creator="Adam Lambert",
-                album_image_path="Songs/Ghost Town/image.jpg",
-                songs_fps=60,
-            ),
-            SongCard(
-                position=(50, 300),
                 song_name="I Want It That Way",
                 creator="Backstreet Boys",
                 album_image_path="Songs/I Want It That Way/image.jpeg",
                 songs_fps=30,
             ),
             SongCard(
-                position=(50, 450),
+                position=(50, 300),
                 song_name="Numb",
                 creator="Linking Park",
                 album_image_path="Songs/Numb/image.jpeg",
                 songs_fps=30,
             ),
             SongCard(
-                position=(50, 600),
+                position=(50, 450),
                 song_name="Vagalumes",
                 creator="Pollo",
                 album_image_path="Songs/Vagalumes/image.jpeg",
@@ -70,15 +63,16 @@ class Main:
         self.player_ranking_text = None
 
     def run(self):
-        pygame.mixer.music.load('Songs/Ghost Town/song.mp3')
+        first_song_name = self.song_cards[0].song_name
+        pygame.mixer.music.load(f'Songs/{first_song_name}/song.mp3')
         pygame.mixer.music.play(loops=-1, start=0)
 
-        self.current_video = self.asset_loader.assets["Ghost Town"]
+        self.current_video = self.asset_loader.assets[f'{first_song_name}']
 
         self.title_text = Text(msg=f"Bem vindo! {self.player[1] if self.player is not None else 'Desconhecido'}",
                                position=(50, 50), color=WHITE, font_size=40,
                                centered=False)
-        self.update_rankings_display('Ghost Town')
+        self.update_rankings_display(first_song_name)
 
         while True:
             CLOCK.tick(FPS)
